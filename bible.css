@@ -1,5 +1,5 @@
 body {
-  font-family: 'Lora', serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 3.5vw;
 }
 
@@ -24,4 +24,10 @@ div {
 }
 #watchWeekP {
   display: inline;
+}
+a:link {
+	color: #ab8a65;
+}
+a:hover {
+	color: #1e5254;
 }

@@ -1,0 +1,27 @@
+body {
+  font-family: 'Lora', serif;
+  font-size: 3.5vw;
+}
+
+button {
+  height: 5vh;
+  width: 25vw;
+}
+
+div {
+  display: block;
+}
+
+#dailyVerses {
+  display :inline;
+  font-size: 3vw;
+}
+
+#extraInfoD, #extraInfoP {
+  margin-top: 0;
+  padding-top: 0;
+  display: block;
+}
+#watchWeekP {
+  display: inline;
+}

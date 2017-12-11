@@ -2686,7 +2686,7 @@ var myObj = {
 17489 : {
 "line1" : 'Twenty-Fourth Sunday after Pentecost',
 "line2" : 'Watchword for the Week - So teach us, O God, to count our days that we may gain a wise heart. Psalm 90:12',
-"line3" : 'Sunday, November 19 - Zephaniah 1:7,12-18; Psalm 90:1-8,(9-11),12',
+"line3" : 'Sunday, November 19 - Zephaniah 1:7,12-18; Psalm 90:1-12',
 "line4" : '1 Thessalonians 5:1-11; Matthew 25:14-30',
 "line5" : 'The Lord your God has blessed you in all your undertakings. Deuteronomy 2:7',
 "line6" : 'Paul wrote: So neither the one who plants nor the one who waters is anything, but only God who gives the growth. 1 Corinthians 3:7',

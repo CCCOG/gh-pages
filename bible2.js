@@ -91,14 +91,7 @@ function addSixLines(offSet){
   var date = splitCurrentLine[0];
   document.getElementById("date").innerHTML = date;
   console.log("The date is : " + date);
-
-  if (splitCurrentLine[4] != null) {
-    var firstVerse = splitCurrentLine[1] + "-" + splitCurrentLine[2] + "-" + splitCurrentLine[3] + "-" + splitCurrentLine[4];
-  } 
-  else if (splitCurrentLine[3] != null) {
-    var firstVerse = splitCurrentLine[1] + "-" + splitCurrentLine[2] + "-" + splitCurrentLine[3];
-  }
-  else if (splitCurrentLine[2] != null) {
+  if (splitCurrentLine[2] != null) {
     var firstVerse = splitCurrentLine[1] + "-" + splitCurrentLine[2];
   } else
   {
@@ -106,7 +99,6 @@ function addSixLines(offSet){
   }
   //Checks for multipule verses in the date line and adds the verse if present
   if (firstVerse.includes(";")){
-    console.log("The firstVerse is: " + firstVerse);
     var verse1Split = firstVerse.split(";");
     console.log("The verse1Split is: " + verse1Split);
     var verse1 = verse1Split[0];
@@ -240,7 +232,7 @@ if (current_entry_log == Object.keys(myObj)[0]){
 };
 
 //Hides the next button if current day is displayed
-if (current_entry_log >= 17531){ //hardcoing is bad, mmkay
+if (current_entry_log >= 17896){ //hardcoing is bad, mmkay
   document.getElementById("next").style.visibility = "hidden";
 }
  else {

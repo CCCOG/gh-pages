@@ -1,3 +1,4 @@
+
 window.onload = function() {
 
  //counter to change the current entry record
@@ -11,6 +12,11 @@ var diff = now - start;
 var oneDay = 1000 * 60 * 60 * 24;
 var currentDay = Math.floor(diff / oneDay);
 currentDay = currentDay + 17166;
+var d = new Date();
+var n = d.getFullYear(); 
+if (n = 2018){
+  currentDay = currentDay + 365
+}
 
 // Turns a verse into a link to biblegateway for that verse
 function verseLink(verse){

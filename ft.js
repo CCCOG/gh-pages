@@ -5361,7 +5361,7 @@ var myObj = {
 "line1" : 'Twentieth Sunday after Pentecost', 
 "line2" : 'Watchword  for the Week - I will proclaim your name to my brothers and sisters, in the midst of the congregation I will praise you. Hebrews 2:12', 
 "line3" : 'Sunday, October 7 - Genesis 2:18-24; Psalm 8', 
-"line4" : 'Hebrews 1:1-4;2:5-12; Mark 10:2-16', 
+"line4" : 'Hebrews 1:1-4,2:5-12; Mark 10:2-16', 
 "line5" : 'Yet it was I who taught Ephraim to walk, I took them up in my arms; but they did not know that I healed them. Hosea 11:3', 
 "line6" : 'Regard the patience of our Lord as salvation. 2 Peter 3:15', 
 "line7" : 'Gracious God, forgive us as we worship those false idols of power, success and fame, forgetting that all we have is from you. Help us to keep you as our greatest love. Amen.', 

@@ -5,26 +5,17 @@ body {
 
 button {
   height: 5vh;
-  width: 25vw;
+  width: 15vw;
+}
+
+input {
+  height: 4.6vh;
 }
 
 div {
   display: block;
 }
 
-#dailyVerses {
-  display :inline;
-  font-size: 3vw;
-}
-
-#extraInfoD, #extraInfoP {
-  margin-top: 0;
-  padding-top: 0;
-  display: block;
-}
-#watchWeekP {
-  display: inline;
-}
 a:link {
 	color: #56331d;
 }

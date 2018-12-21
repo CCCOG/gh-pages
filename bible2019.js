@@ -273,7 +273,7 @@ var defaults = {
 // This is the request function. This will pull in the data from github with a file name that
 // matches final<year>.json
 function getJsonFile(textYear){
-    var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_2019/master/final" + textYear + ".json"
+    var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/final" + textYear + ".json"
     var request = new XMLHttpRequest();
     request.open('GET', requestURL)
     request.responseType = 'json';

@@ -4,7 +4,7 @@ This is a small project written for the [CENTRALIA COMMUNITY CHURCH](https://ccc
 
 ## Background
 
-This project (while currently meeting then need) is still a work in progress. I ([thecodinghyrax](https://github.com/thecodinghyrax)) am not a professional developer, but I do have a keen interest in programming and all things tech. The current version of this project is head and shoulders above the first but still requires some manual intervention to get the text formatted correctly. The goal is to one day run a single script and have either 1. The entire page updated with the new text or 2. Display the errors and allow the user to fix them as the process goes.
+This project (while currently meeting the need) is still a work in progress. I ([thecodinghyrax](https://github.com/thecodinghyrax)) am not a professional developer, but I do have a keen interest in programming and all things tech. The current version of this project is head and shoulders above the first but still requires some manual intervention to get the text formatted correctly. The goal is to one day run a single script and have either 1. The entire page updated with the new text or 2. Display the errors and allow the user to fix them as the process goes.
 
 ## How it works
 Currently we are heavy Windows users and the text is generated on a Mac so the text is first “converted” to be more usable on Windows, it is then converted into a JSON format and then each entry is further parsed to split the information into lists (within the JSON file). Once the data is prepared, it is left on this github repo where the JS file can call on it for the daily information. 

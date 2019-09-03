@@ -5240,15 +5240,24 @@
             "line_count": 7
         },
         "245": {
-            "line1": "Monday, September 2",
+            "line1": [ 
+                "Monday, September 2" 
+                ],
             "line2": [
-                "Psalm 105:1-7?Jeremiah 31:23-32:15",
-                "2 Timothy 3:1-9",
-                "The Lord says, \"I will be gracious to whom I will be gracious, and will show mercy on whom I will show mercy.\" Exodus 33:19"
+                "Psalm 105:1-7",
+                "Jeremiah 31:23-32:15",
+                "2 Timothy 3:1-9"
             ],
-            "line3": "There is no distinction, since all have sinned and fall short of the glory of God; they are now justified by his grace as a gift. Romans 3:22-24",
-            "line4": "O Lord, we are all sinners, but you have chosen us as your own and have given us your glorious gifts of forgiveness and grace, so that we might face another day. Thank you for your life-restoring mercy. Amen.",
-            "line_count": 4
+            "line3": [ 
+                "The Lord says, \"I will be gracious to whom I will be gracious, and will show mercy on whom I will show mercy.\" Exodus 33:19" 
+                ],
+            "line4": [ 
+                "There is no distinction, since all have sinned and fall short of the glory of God; they are now justified by his grace as a gift. Romans 3:22-24" 
+                ],
+            "line5": [
+                 "O Lord, we are all sinners, but you have chosen us as your own and have given us your glorious gifts of forgiveness and grace, so that we might face another day. Thank you for your life-restoring mercy. Amen." 
+                 ],
+            "line_count": 5
         },
         "246": {
             "line1": [

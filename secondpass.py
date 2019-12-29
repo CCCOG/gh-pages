@@ -8,8 +8,8 @@ total_lines_for_this_day = 1
 currentLine = "Place holder"
 
 def secondFunc(leap):
-    fI = open("firstpassout.txt", "r")
-    fO = open("secondpassout.json", "w")
+    fI = open("firstpassout.txt", "r", encoding='utf-8')
+    fO = open("secondpassout.json", "w", encoding='utf-8-sig')
 
     
     #setup the json file
@@ -21,26 +21,19 @@ def secondFunc(leap):
         global currentLine
         currentLine = fI.readline()
         
-        
-        #print("From create_json_entry: currentLine is %r" %currentLine)
         if (currentLine == "\n" or currentLine == "' '\n"):
-            # print("I found a new line. Passing")
             pass
         elif (currentLine == ""):
             day = (day + 100)# Just to make it break
         else:
             currentLine = currentLine.rstrip()
-            #print(currentLine[-5:])
-            #print("The currentLine var is = %r" % currentLine)
-            #print("The currentLine var is = {}" .format(currentLine))
-            # if (currentLine[-5:] == "Amen." or currentLine[-7:] == "Burial)" or currentLine[-5:] == "Amen!" or currentLine.endswith("Hallelujah!")):
-            if (currentLine.endswith("Amen.") or currentLine.endswith("Burial)") or currentLine.endswith("Amen!") or currentLine.endswith("Hallelujah!")):
+
+            if (currentLine.endswith("Amen.") or currentLine.endswith("Burial)") or currentLine.endswith("men!") or currentLine.endswith("Hallelujah!")):
                 fO.write('"line')
                 fO.write(str(total_lines_for_this_day))
                 fO.write('" ' + ': "'  + currentLine + '", \n')
                 fO.write('"line_count')
                 fO.write('"' + ': ')
-                #print("Total lines for the day = %s" %total_lines_for_this_day)
                 fO.write('%d' % total_lines_for_this_day)
                 fO.write(' \n')
                 total_lines_for_this_day = 1
@@ -52,19 +45,16 @@ def secondFunc(leap):
                 elif day <= 365:
                     fO.write('}, \n"' + str(day) + '" : { \n')
                 else:
-                    pass
-                    
-                    
-                    
+                    pass           
 
                 total_lines_for_this_day = 1
+
             else:
                 currentLine = currentLine.rstrip()
                 fO.write('"line')
                 fO.write(str(total_lines_for_this_day))
                 fO.write('" ' + ': "' + currentLine + '", \n')
                 total_lines_for_this_day += 1
-       
 
     if leap == 'yes':
         while (day < 367):# leap year

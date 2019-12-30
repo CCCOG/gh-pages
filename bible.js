@@ -71,7 +71,7 @@ function fiveLineDay(currentDayEntry){
     // Handeling line 1
     dateLine(currentDayEntry["line1"][0]);    
     // Handeling line 2
-    sectionHeading("Daily Scripture Lessions");
+    sectionHeading("Daily Scripture Lessons");
     verseLine(currentDayEntry["line2"]);
     // Handeling line 3
     sectionHeading("Watchword For the Day");
@@ -94,7 +94,7 @@ function sixLineDay(currentDayEntry){
     // Handeling line 2
     dateLine(currentDayEntry["line2"][0]);
     // Handeling line 3
-    sectionHeading("Daily Scripture Lessions");
+    sectionHeading("Daily Scripture Lessons");
     verseLine(currentDayEntry["line3"]);
     // Handeling line 4
     sectionHeading("Watchword For the Day");
@@ -126,7 +126,7 @@ function sevenLineDay(currentDayEntry){
     }
     
     // Handeling line 4
-    sectionHeading("Daily Scripture Lessions");
+    sectionHeading("Daily Scripture Lessons");
     verseLine(currentDayEntry["line4"]);
     // Handeling line 5
     sectionHeading("Watchword For the Day");
@@ -158,7 +158,7 @@ function eightLineDay(currentDayEntry){
         console.log(currentDayEntry["line2"].slice(1));
     }
     // Handeling line 4
-    sectionHeading("Daily Scripture Lessions");
+    sectionHeading("Daily Scripture Lessons");
     verseLine(currentDayEntry["line3"].slice(1));
     // Handeling line 5
     sectionHeading(currentDayEntry["line4"][0]);
@@ -194,7 +194,7 @@ function nineLineDay(currentDayEntry){
         console.log(currentDayEntry["line2"].slice(1));
     }
     // Handeling line 4
-    sectionHeading("Daily Scripture Lessions");
+    sectionHeading("Daily Scripture Lessons");
     verseLine(currentDayEntry["line4"]);
     // Handeling line 5
     sectionHeading(currentDayEntry["line5"][0]);

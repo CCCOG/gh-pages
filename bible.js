@@ -184,7 +184,10 @@ function nineLineDay(currentDayEntry){
     // Handeling line 2
     dateLine(currentDayEntry["line3"]);
     // Handeling line 3
-    if (currentDayEntry["line2"].length <= 1){
+    if (currentDayEntry["line1"] === currentDayEntry["line2"]){
+        console.log("Line one and two are the same. Skipping line 2!");
+    }
+    else if (currentDayEntry["line2"].length <= 1){
         console.log("This currentDayEntry has no real entry for line2");
         textOnlyH2(currentDayEntry["line2"][0]);
     } else {
@@ -231,8 +234,8 @@ var defaults = {
 // matches final<year>.json
 function getJsonFile(textYear){
     // This is for testing. Uncomment the cccog entry before going live. TODO
-    // var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/final" + textYear + ".json"
-    var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_2019/master/final" + textYear + ".json"
+    var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/final" + textYear + ".json"
+    // var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_2019/master/final" + textYear + ".json"
     var request = new XMLHttpRequest();
     request.open('GET', requestURL)
     request.responseType = 'json';

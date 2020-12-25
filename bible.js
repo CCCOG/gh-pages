@@ -184,7 +184,7 @@ function nineLineDay(currentDayEntry){
     // Handeling line 2
     dateLine(currentDayEntry["line3"]);
     // Handeling line 3
-    if (currentDayEntry["line1"] === currentDayEntry["line2"]){
+    if (currentDayEntry["line1"][0] === currentDayEntry["line2"][0]){
         console.log("Line one and two are the same. Skipping line 2!");
     }
     else if (currentDayEntry["line2"].length <= 1){

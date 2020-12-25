@@ -71,7 +71,7 @@ function fiveLineDay(currentDayEntry){
     // Handeling line 1
     dateLine(currentDayEntry["line1"][0]);    
     // Handeling line 2
-    sectionHeading("Daily Scripture Lessons");
+    sectionHeading("Daily Scripture Lessions");
     verseLine(currentDayEntry["line2"]);
     // Handeling line 3
     sectionHeading("Watchword For the Day");
@@ -94,7 +94,7 @@ function sixLineDay(currentDayEntry){
     // Handeling line 2
     dateLine(currentDayEntry["line2"][0]);
     // Handeling line 3
-    sectionHeading("Daily Scripture Lessons");
+    sectionHeading("Daily Scripture Lessions");
     verseLine(currentDayEntry["line3"]);
     // Handeling line 4
     sectionHeading("Watchword For the Day");
@@ -126,7 +126,7 @@ function sevenLineDay(currentDayEntry){
     }
     
     // Handeling line 4
-    sectionHeading("Daily Scripture Lessons");
+    sectionHeading("Daily Scripture Lessions");
     verseLine(currentDayEntry["line4"]);
     // Handeling line 5
     sectionHeading("Watchword For the Day");
@@ -158,7 +158,7 @@ function eightLineDay(currentDayEntry){
         console.log(currentDayEntry["line2"].slice(1));
     }
     // Handeling line 4
-    sectionHeading("Daily Scripture Lessons");
+    sectionHeading("Daily Scripture Lessions");
     verseLine(currentDayEntry["line3"].slice(1));
     // Handeling line 5
     sectionHeading(currentDayEntry["line4"][0]);
@@ -190,11 +190,9 @@ function nineLineDay(currentDayEntry){
     } else {
         sectionHeading(currentDayEntry["line2"][0]);
         textOnly(currentDayEntry["line2"][1]);
-        console.log(currentDayEntry["line2"]);
-        console.log(currentDayEntry["line2"].slice(1));
     }
     // Handeling line 4
-    sectionHeading("Daily Scripture Lessons");
+    sectionHeading("Daily Scripture Lessions");
     verseLine(currentDayEntry["line4"]);
     // Handeling line 5
     sectionHeading(currentDayEntry["line5"][0]);
@@ -278,9 +276,9 @@ request.onload = function() {
     var inputField = document.createElement("input");
     inputField.setAttribute("id", "input");
     inputField.setAttribute("type", "date");
-    inputField.setAttribute("value", "2020-01-01");
+    inputField.setAttribute("value", "2021-01-01");
     inputField.setAttribute("min", "2016-01-01");
-    inputField.setAttribute("max", "2020-12-31");//This will need to be changed everytime a new year file is added. This will need to be changed after go live. Todo
+    inputField.setAttribute("max", "2021-12-31");//This will need to be changed everytime a new year file is added. This will need to be changed after go live. Todo
     var searchButton = document.createElement("button");
     searchButton.setAttribute("id", "search");
     searchButton.innerHTML = "Search";
@@ -299,7 +297,7 @@ request.onload = function() {
     };
     
     //Hides the next button if current day is the last day in the last JSON file
-    if (defaults.day >= 366 && defaults.year == 2020){ //This will need to be changed everytime a new year file is added. This will need to be changed after go live. Please account for leap year if needed. Todo
+    if (defaults.day >= 365 && defaults.year == 2021){ //This will need to be changed everytime a new year file is added. This will need to be changed after go live. Please account for leap year if needed. Todo
         document.getElementById("next").style.visibility = "hidden";
     } else {
         document.getElementById("next").style.visibility = "visible";
@@ -314,15 +312,17 @@ request.onload = function() {
             defaults.day = 1            
             console.log("The day of the year is now (non-leap year) = " + defaults.day);
             console.log("The year is now (non-leap year) = " + defaults.year);
-        } else if (defaults.day == 366 && defaults.year == 2016){ //Please account for leap year if needed. Todo
+        } else if (defaults.day == 366 && (defaults.year == 2016 || defaults.year == 2020)){ //Please account for leap year if needed. Todo
             defaults.year = Number(defaults.year)
             defaults.year += 1;
             defaults.day = 1;
             console.log("The day of the year is now (leap year) = " + defaults.day);
             console.log("The year is now (leap year) = " + defaults.year);
-        } else if (defaults.day >= 366 && defaults.year == 2020) { // This will need to be removed(?) next year and defaults.year == 2020 will need to move to the previous if line
-            // Do nothing. Exit the function?
-        } else {
+        } 
+        // else if (defaults.day >= 366 && defaults.year == 2020) { // This will need to be removed(?) next year and defaults.year == 2020 will need to move to the previous if line
+        //     // Do nothing. Exit the function?
+        // } 
+        else {
             defaults.day += 1;
             console.log("The day of the year is now (normal day) = " + defaults.day);
             console.log("The year is now (normal day) = " + defaults.year);
@@ -364,12 +364,12 @@ request.onload = function() {
     document.getElementById('next').onclick = next;
     document.getElementById('previous').onclick = previous;
     document.body.addEventListener("keyup", function(event) {
-        if (event.keyCode === 39) {            
+        if (event.code === "ArrowRight") {            
             event.preventDefault();
             this.outerHTML = this.outerHTML;
             next();
         } 
-        if (event.keyCode === 37){
+        if (event.code === "ArrowLeft"){
             event.preventDefault();
             this.outerHTML = this.outerHTML;
             previous();
@@ -380,6 +380,7 @@ request.onload = function() {
     document.getElementById("search").onclick = function () {
         var x = document.getElementById("input")
         var searchInput = x.value;
+        console.log("The searchInput is: " + searchInput)
         var inputList = searchInput.split("-");
         defaults.year = inputList[0];
         

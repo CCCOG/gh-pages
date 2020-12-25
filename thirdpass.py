@@ -52,7 +52,7 @@ def thirdFunc():
 
                     # This should only pick up and work on the eight line days   
                     elif day_name in data["dayText"][day][line][:10]:
-                        print("I'm on %s day in the elis condition" % (data["dayText"][day][line])
+                        print("I'm on %s day in the elis condition" % (data["dayText"][day][line]))
 
                         # This is handling the date line and verses
                         split_line = data["dayText"][day][line]

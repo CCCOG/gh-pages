@@ -28,7 +28,8 @@ body {
 
 
   input {
-    height: 4.6vh;
+    height: auto;
+    padding: 1em;
   }
   
   div {

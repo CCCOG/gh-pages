@@ -1,0 +1,62 @@
+Structuring the original text file:
+All source files have to be utf-8 txt files
+All sources files need to be named <year>.txt
+All days have to be separated by at least 2 spaces!
+All date + verse lines need to be on two separate lines (date - verse \n verse; verse; verse)
+All named date + verse lines need to be on two separate lines (name date + verse \n verse, verse, verse)
+If a verse has additional chapters or verses it should always be separated by a command
+
+
+Things to watch for:
+If you are seeing weird extra lines when running "all" after all the parses, check for incorrect line endings (like they 
+split a prayer line for example, onto two separate lines...for no reason)
+
+Sometimes there will be a ";" in place of a "," in the verses. You might catch this but running #3 !! Trust this. It's either long or wrong
+
+If a parse all crashes, try running each parsing setup with and "all" run in between. 
+
+!!!*****   You must change the first line of the bible.js file every year you add and new year   *****!!!!!
+
+
+Structuring the JSON file:
+<year>.JSON
+{<day number>: [
+                [<className(for css)>, <item1>, <item1>, ect],
+                [<className(for css)>, <item1>, <item1>, ect],
+                [<className(for css)>, <item1>, <item1>, ect],
+                ]
+},
+
+Example:
+    2021.JSON
+    "3": [
+        [
+            "info",
+            "Second Sunday after Christmas Day"
+        ],
+        [
+            "watchO",
+            "Watchword for the week \u2014 In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace. Ephesians 1:7"
+        ],
+        [
+            "dateVerse",
+            "Sunday, January 3",
+            "Jeremiah 31:7-14",
+            "Psalm 147:12-20",
+            "Ephesians 1:3-14",
+            "John 1:(1-9),10-18"
+        ],
+        [
+            "watchD",
+            "If you offer your food to the hungry and satisfy the needs of the afflicted, then your light shall rise in the darkness. Isaiah 58:10"
+        ],
+        [
+            "docT",
+            "Be merciful, just as your Father is merciful. Luke 6:36"
+        ],
+        [
+            "prayer",
+            "Merciful Savior, we know that whatever we do to the least of these, we also do unto you. May we always embody the change you make in our lives by caring for those who cannot care for themselves. In remembrance of you. Amen."
+        ]
+    ],
+    "4": [ ect....]

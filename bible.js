@@ -1,3 +1,36 @@
+const finalYear = 2021 // Update this value after every new year is added !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const leapYears = [2016, 2020, 2024, 2028, 2032];
+
+
+//This sets the value of the day to today's "Day number"(current day number)
+var today = new Date()
+var todayString = new Date().toISOString().substring(0, 10);
+console.log("The current day is: "+today);
+var day = Math.ceil((today - new Date(today.getFullYear(), 0, 1)) / 86400000);
+var year = today.getFullYear();
+
+
+//This will hold the default day and year values. It can also be updated from the 
+// functions in the next and previous buttons. (State)
+var defaults = {
+    year : year,
+    day : day,
+    todayString : todayString
+}
+
+// This is the request function. This will pull in the data from github with a file name that
+// matches final<year>.json
+function getJsonFile(textYear){
+    var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/" + textYear + ".json"
+    // var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_v3/major-change-for-index/" + textYear + ".json"
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL)
+    request.responseType = 'json';
+    request.send();
+    return request
+}
+
+
 // This creates a link from the supplied verse. Assmuptions - They will always want the NIV translation.
 function createLink(verse){
     var gatewayLinkMain = "https://www.biblegateway.com/passage/?search=";
@@ -5,242 +38,122 @@ function createLink(verse){
     return link
 }
 
-// Creates an HTML line for date text
-function dateLine(line){
-    var line1 = document.createElement("h2");
-    var text1 = document.createTextNode("Daily Text - " + line);
-    line1.appendChild(text1);
+// Creates an HTML line for specialVerses or dateVerse line
+function verses(line){
+    var lineClass = line.shift()
+    var line2 = document.createElement("h3");
+
+    if (lineClass === "dateVerse"){
+        var line1 = document.createElement("h2");
+        line1.className = lineClass;
+        line1.innerHTML = "Daily Text - " + line.shift();
+        document.querySelector("body").appendChild(line1);
+        line2.innerHTML = "Daily Scripture Lessons";
+    } else {
+        line2.innerHTML = line.shift();
+    }
+    document.querySelector("body").appendChild(line2);
+
+    for (var i = 0; i < line.length; i++){
+        var para = document.createElement("p");
+        var span = document.createElement("span");
+        var anchor = document.createElement("a");
+        var text = document.createTextNode(line[i]);
+        var tab = document.createTextNode("\t\t");
+        anchor.appendChild(text);
+        anchor.setAttribute("href", createLink(line[i]));
+        anchor.setAttribute("target", "_blank");
+        span.appendChild(anchor);
+        para.appendChild(span);
+        para.appendChild(tab);
+        document.querySelector("body").appendChild(para);
+    }
+}
+
+function infoLine(line){
+    var lineClass = line.shift();
+    if (line[0].length > 45){
+        var line1 = document.createElement("p");
+        console.log("The line.length is: " + line[0].length);
+    line1.innerHTML = line.shift() + "<br/>";
+    } else {
+        var line1 = document.createElement("h2");
+    line1.innerHTML = line.shift();
+    }
+    line1.className = lineClass;
     document.querySelector("body").appendChild(line1);
 }
 
-// Creates an HTML line for each verse in a verse line
-function verseLine (line){    
-        for (var j = 0; j < line.length; j++){
-            var para = document.createElement("p");
-            var span = document.createElement("span");
-            var anchor = document.createElement("a");
-            var text = document.createTextNode(line[j]);
-            var tab = document.createTextNode("\t\t");
-            anchor.appendChild(text);
-            anchor.setAttribute("href", createLink(line[j]));
-            anchor.setAttribute("target", "_blank");
-            span.appendChild(anchor);
-            para.appendChild(span);
-            para.appendChild(tab);
-            document.querySelector("body").appendChild(para);
-            }
-        }
+function watchO(line){
+    var lineClass = line.shift();
 
-// Creates an HTML line for text only
-function textOnly(line){
-    var para = document.createElement("p");
-    var text = document.createTextNode(line);
-    para.appendChild(text);
-    document.querySelector("body").appendChild(para);
+    var watchWordOtherList = line[0].split("\u2014");
+    var line1 = document.createElement('h3');
+    line1.innerHTML = watchWordOtherList[0].trim();
+    document.querySelector("body").appendChild(line1);
+    var line2 = document.createElement("p");
+    line2.innerHTML = watchWordOtherList[1].trim();
+    line2.className = lineClass;
+    document.querySelector("body").appendChild(line2);
 }
 
-// Creates an h3 section heading with text passed as "heading"
-function sectionHeading(heading){
-    var heading2 = document.createElement("h3");
-    var text = document.createTextNode(heading);
-    heading2.appendChild(text);
-    document.querySelector("body").appendChild(heading2);
+function watchD(line){
+    var lineClass = line.shift();
+    var line1 = document.createElement("h3");
+    line1.className = lineClass;
+    line1.innerHTML = "Watchword For the Day";
+    document.querySelector("body").appendChild(line1);
+    var line2 = document.createElement("p");
+    line2.className = lineClass;
+    line2.innerHTML = line.shift();
+    document.querySelector("body").appendChild(line2);
 }
 
-// Creates an h1 section heading with text passed as "line"
-function textOnlyH1(line){
-    var para = document.createElement("h1");
-    var text = document.createTextNode(line);
-    para.appendChild(text);
-    document.querySelector("body").appendChild(para);
+function docT(line){
+    var lineClass = line.shift();
+    var line1 = document.createElement("h3");
+    line1.className = lineClass;
+    line1.innerHTML = "Doctrinal Text";
+    document.querySelector("body").appendChild(line1);
+    var line2 = document.createElement("p");
+    line2.className = lineClass;
+    line2.innerHTML = line.shift();
+    document.querySelector("body").appendChild(line2);
 }
 
-// Creates an h2 section heading with text passed as "line"
-function textOnlyH2(line){
-    var para = document.createElement("h2");
-    var text = document.createTextNode(line);
-    para.appendChild(text);
-    document.querySelector("body").appendChild(para);
+function prayer(line){
+    var lineClass = line.shift();
+    var line1 = document.createElement("h3");
+    line1.className = lineClass;
+    line1.innerHTML = "Prayer";
+    document.querySelector("body").appendChild(line1);
+    var line2 = document.createElement("p");
+    line2.className = lineClass;
+    line2.innerHTML = line.shift();
+    document.querySelector("body").appendChild(line2);
 }
 
-// The will handle all HTML for a JSON entry with five lines
-function fiveLineDay(currentDayEntry){
-    //This is a reset of the HTML body
-    var body = document.querySelector("body");
-    body.innerHTML = '';
-    // Handeling line 1
-    dateLine(currentDayEntry["line1"][0]);    
-    // Handeling line 2
-    sectionHeading("Daily Scripture Lessions");
-    verseLine(currentDayEntry["line2"]);
-    // Handeling line 3
-    sectionHeading("Watchword For the Day");
-    textOnly(currentDayEntry["line3"][0]);
-    // Handeling line 4
-    sectionHeading("Doctrinal Text");
-    textOnly(currentDayEntry["line4"][0]);
-    // Handeling line 5
-    sectionHeading("Prayer");
-    textOnly(currentDayEntry["line5"][0]);
-}
-
-// The will handle all HTML for a JSON entry with six lines
-function sixLineDay(currentDayEntry){
+// Test function for displaying day data
+function dayDisplay(currentDayEntry) {
     //This is a reset of the body
     var body = document.querySelector("body");
     body.innerHTML = '';
-    // Handeling line 1
-    textOnlyH1(currentDayEntry["line1"][0]);
-    // Handeling line 2
-    dateLine(currentDayEntry["line2"][0]);
-    // Handeling line 3
-    sectionHeading("Daily Scripture Lessions");
-    verseLine(currentDayEntry["line3"]);
-    // Handeling line 4
-    sectionHeading("Watchword For the Day");
-    textOnly(currentDayEntry["line4"]);
-    // Handeling line 5
-    sectionHeading("Doctrinal Text");
-    textOnly(currentDayEntry["line5"]);
-    // Handeling line 6
-    sectionHeading("Prayer");
-    textOnly(currentDayEntry["line6"]);
-}
 
-// The will handle all HTML for a JSON entry with seven lines
-function sevenLineDay(currentDayEntry){
-    //This is a reset of the body
-    var body = document.querySelector("body");
-    body.innerHTML = '';
-    // Handeling line 1
-    textOnlyH1(currentDayEntry["line1"][0]);
-    // Handeling line 2
-    dateLine(currentDayEntry["line3"][0]);//order is switched intentionally
-    // Handeling line 3
-    if (currentDayEntry["line2"].length == 2){
-        sectionHeading(currentDayEntry["line2"][0]);
-        textOnly(currentDayEntry["line2"][1]);
-    } else {
-        sectionHeading("Watchword for the Week");
-        textOnly(currentDayEntry["line2"][0]);
-    }
-    
-    // Handeling line 4
-    sectionHeading("Daily Scripture Lessions");
-    verseLine(currentDayEntry["line4"]);
-    // Handeling line 5
-    sectionHeading("Watchword For the Day");
-    textOnly(currentDayEntry["line5"][0]);
-    // Handeling line 6
-    sectionHeading("Doctrinal Text");
-    textOnly(currentDayEntry["line6"]);
-    // Handeling line 7
-    sectionHeading("Prayer");
-    textOnly(currentDayEntry["line7"]);
-}
-
-// The will handle all HTML for a JSON entry with eigth lines
-function eightLineDay(currentDayEntry){
-    //This is a reset of the body
-    var body = document.querySelector("body");
-    body.innerHTML = '';
-    // Handeling line 1
-    textOnlyH1(currentDayEntry["line1"]);
-    // Handeling line 2
-    dateLine(currentDayEntry["line3"][0]);//order is switched intentionally
-    // Handeling line 3    
-    if (currentDayEntry["line2"].length <= 1){
-        console.log("This currentDayEntry has no real entry for line2");
-    } else {
-        sectionHeading(currentDayEntry["line2"][0]);
-        textOnly(currentDayEntry["line2"][1]);
-        console.log(currentDayEntry["line2"]);
-        console.log(currentDayEntry["line2"].slice(1));
-    }
-    // Handeling line 4
-    sectionHeading("Daily Scripture Lessions");
-    verseLine(currentDayEntry["line3"].slice(1));
-    // Handeling line 5
-    sectionHeading(currentDayEntry["line4"][0]);
-    verseLine(currentDayEntry["line5"]);
-    // Handeling line 6
-    sectionHeading("Watchword For the Day");
-    textOnly(currentDayEntry["line6"]);
-    // Handeling line 7
-    sectionHeading("Doctrinal Text");
-    textOnly(currentDayEntry["line7"]);
-    // Handeling line 7
-    sectionHeading("Prayer");
-    textOnly(currentDayEntry["line8"]);
-}
-
-// The will handle all HTML for a JSON entry with nine lines - Please note....this is still broken
-function nineLineDay(currentDayEntry){
-    //This is a reset of the body
-    var body = document.querySelector("body");
-    body.innerHTML = '';
-    // Handeling line 1
-    textOnlyH1(currentDayEntry["line1"][0]);
-    // Handeling line 2
-    dateLine(currentDayEntry["line3"]);
-    // Handeling line 3
-    if (currentDayEntry["line1"][0] === currentDayEntry["line2"][0]){
-        console.log("Line one and two are the same. Skipping line 2!");
-    }
-    else if (currentDayEntry["line2"].length <= 1){
-        console.log("This currentDayEntry has no real entry for line2");
-        textOnlyH2(currentDayEntry["line2"][0]);
-    } else {
-        sectionHeading(currentDayEntry["line2"][0]);
-        textOnly(currentDayEntry["line2"][1]);
-    }
-    // Handeling line 4
-    sectionHeading("Daily Scripture Lessions");
-    verseLine(currentDayEntry["line4"]);
-    // Handeling line 5
-    sectionHeading(currentDayEntry["line5"][0]);
-    // Handeling line 6
-    verseLine(currentDayEntry["line6"]);
-    // Handeling line 7
-    sectionHeading("Watchword For the Day");
-    textOnly(currentDayEntry["line7"][0]);
-    // Handeling line 8
-    sectionHeading("Doctrinal Text");
-    textOnly(currentDayEntry["line8"][0]);
-    // Handeling line 9
-    sectionHeading("Prayer");
-    textOnly(currentDayEntry["line9"][0]);
-}
-
-//This sets the value of the day to today's "Day number"(current day number)
-var today = new Date()
-console.log(today);
-var day = Math.ceil((today - new Date(today.getFullYear(), 0, 1)) / 86400000);
-
-
-//day = 364 // For testing. Comment out when go live.
-var year = today.getFullYear();
-//year = 2018 // For testing. Comment out when go live.
-
-//This will hold the default day and year values. It can also be update from the 
-// functions in the next and previous buttons. 
-var defaults = {
-    year : year,
-    day : day
-}
-
-
-// This is the request function. This will pull in the data from github with a file name that
-// matches final<year>.json
-function getJsonFile(textYear){
-    // This is for testing. Uncomment the cccog entry before going live. TODO
-    var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/final" + textYear + ".json"
-    // var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_2019/master/final" + textYear + ".json"
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL)
-    request.responseType = 'json';
-    request.send();
-    return request
+    currentDayEntry.forEach(line => {
+        if (line[0] === "dateVerse" || line[0] === "specialVerse") {
+            verses(line);
+        } else if (line[0] === "info"){
+            infoLine(line);
+        } else if (line[0] === "watchO"){
+            watchO(line);
+        } else if (line[0] === "watchD"){
+            watchD(line);
+        } else if (line[0] === "docT"){
+            docT(line);
+        } else if (line[0] === "prayer"){
+            prayer(line);
+        } 
+    });
 }
 
 function main(mainYear){
@@ -251,37 +164,29 @@ var request = getJsonFile(mainYear);
 //This is where all the functions are called after the JSON is requested and loaded
 request.onload = function() {
     
-    // Main function handles all of the other function calls. 
-    // This will be recalled after the "next" and/or "previous" buttons are clicked
+    // Main function handles all other function calls. 
+    // This will be called after the "next", "previous"and/or "search" buttons are clicked
     var data = request.response;
-    if (data.dayText[defaults.day]["line_count"] == 5){
-        fiveLineDay(data.dayText[defaults.day]);
-    } else if (data.dayText[defaults.day]["line_count"] == 6){
-        sixLineDay(data.dayText[defaults.day]);
-    } else if (data.dayText[defaults.day]["line_count"] == 7){
-        sevenLineDay(data.dayText[defaults.day]);
-    } else if (data.dayText[defaults.day]["line_count"] == 8){
-        eightLineDay(data.dayText[defaults.day]);
-    } else if (data.dayText[defaults.day]["line_count"] == 9){
-        nineLineDay(data.dayText[defaults.day]);
-    } else {
-        console.log("I have failed to match a line_count for today!")
-        }
-    
+    dayDisplay(data[defaults.day]);
+    console.log("The current year is: " + defaults.year);
+
     // This is creating the buttons and adding them to the HTML
     var div = document.createElement("div");
     var buttonPrevious = document.createElement("button");
     buttonPrevious.setAttribute("id", "previous");
     buttonPrevious.innerHTML = "Previous";
+
     var buttonNext = document.createElement("button");
     buttonNext.setAttribute("id", "next");
     buttonNext.innerHTML = "Next";
     var inputField = document.createElement("input");
     inputField.setAttribute("id", "input");
     inputField.setAttribute("type", "date");
-    inputField.setAttribute("value", "2021-01-01");
+    inputField.setAttribute("value", defaults.todayString);
     inputField.setAttribute("min", "2016-01-01");
-    inputField.setAttribute("max", "2021-12-31");//This will need to be changed everytime a new year file is added. This will need to be changed after go live. Todo
+    var lastDayOfThisYear = new Date(finalYear, 11, 31).toISOString().substring(0, 10);
+    inputField.setAttribute("max", lastDayOfThisYear);
+
     var searchButton = document.createElement("button");
     searchButton.setAttribute("id", "search");
     searchButton.innerHTML = "Search";
@@ -298,107 +203,92 @@ request.onload = function() {
     } else {
         document.getElementById("previous").style.visibility = "visible";
     };
-    
+
     //Hides the next button if current day is the last day in the last JSON file
-    if (defaults.day >= 365 && defaults.year == 2021){ //This will need to be changed everytime a new year file is added. This will need to be changed after go live. Please account for leap year if needed. Todo
+    if ((defaults.year === year && leapYears.includes(year) && defaults.day >= 366) || (defaults.year === year && defaults.day >= 365)){
         document.getElementById("next").style.visibility = "hidden";
     } else {
         document.getElementById("next").style.visibility = "visible";
     };
     
-    // Defines the funtion to advance to the next day entry 
+    // Defines the function to advance to the next day entry 
     function next() {
-        this.outerHTML = this.outerHTML;
-        if (defaults.day == 365 && defaults.year != 2016 && defaults.year != 2020){ //Please account for leap year if needed. Todo
-            defaults.year = Number(defaults.year)
+        // What to do if its the last day of a non-leap year and not the current year
+        if (defaults.day === 365 && defaults.year != year && !leapYears.includes(defaults.year)){
             defaults.year += 1;
-            defaults.day = 1            
-            console.log("The day of the year is now (non-leap year) = " + defaults.day);
-            console.log("The year is now (non-leap year) = " + defaults.year);
-        } else if (defaults.day == 366 && (defaults.year == 2016 || defaults.year == 2020)){ //Please account for leap year if needed. Todo
-            defaults.year = Number(defaults.year)
+            defaults.day = 1
+            // What to do if it's on the last day of a leap year and not the current year
+        } else if (defaults.day === 366 && defaults.year != year){
             defaults.year += 1;
             defaults.day = 1;
-            console.log("The day of the year is now (leap year) = " + defaults.day);
-            console.log("The year is now (leap year) = " + defaults.year);
-        } 
-        // else if (defaults.day >= 366 && defaults.year == 2020) { // This will need to be removed(?) next year and defaults.year == 2020 will need to move to the previous if line
-        //     // Do nothing. Exit the function?
-        // } 
-        else {
+            // What to do if it's the last day of the current year
+        } else if ( defaults.year === year && (defaults.day === 365 && !leapYears.includes(defaults.year)) || (defaults.day === 366 && leapYears.includes(defaults.year)) ) {
+            console.log("End of the year. Do nothing when the Next button is clicked!");
+        } else {
             defaults.day += 1;
-            console.log("The day of the year is now (normal day) = " + defaults.day);
-            console.log("The year is now (normal day) = " + defaults.year);
         }
-       
-        console.log("The day of the year is now = " + defaults.day);
-        console.log("The year is now = " + defaults.year);
-        main(defaults.year); 
+        main(defaults.year);
     };
 
     // Defines the function to advance to the previous day entry
     function previous() {
-        this.outerHTML = this.outerHTML;
-        if (defaults.day == 1 && defaults.year != 2017 && defaults.year != 2021){ // Day 1 not following a leap year
-            defaults.year = Number(defaults.year)
+        // What to do if the previous year is not 2016 and the previous year is not a leapyear
+        if (defaults.day === 1 && !leapYears.includes((defaults.year - 1)) && defaults.year >= 2017){
             defaults.year -= 1;
             defaults.day = 365;
-            console.log("The day of the year is now (non-2016)= " + defaults.day);
-            console.log("The year is now (non-2016) = " + defaults.year);
-        } else if (defaults.day == 1 && defaults.year == 2017){ // Day 1 after the 2016 leap year
-            defaults.year = Number(defaults.year)
+        } else if (defaults.day === 1 && leapYears.includes((defaults.year - 1)) && defaults.year >= 2017){
             defaults.year -= 1;
-            defaults.day = 366; //2016 is a leap year
-            console.log("The day of the year is now (leap year) = " + defaults.day);
-            console.log("The year is now (leap year) = " + defaults.year);
-        } else if (defaults.day == 1 && defaults.year == 2021){ // Day 1 after the 2020 leap year
-            defaults.year = Number(defaults.year)
-            defaults.year -= 1;
-            defaults.day = 366; //2020 is a leap year
-            console.log("The day of the year is now (leap year) = " + defaults.day);
-            console.log("The year is now (leap year) = " + defaults.year);
+            defaults.day = 366; //defaults.year is a leap year
+        } else if (defaults.day === 1 && defaults.year === 2016){  
+            console.log("Do nothing as this is the first day of the first year we have data for (2016)");
         } else {
             defaults.day -= 1;
-            console.log("The day of the year is now (normal day) = " + defaults.day);
-            console.log("The year is now (normal day) = " + defaults.year);
         }
         main(defaults.year); 
         };
+    
+    // Defines the function to handle a search for a spicific day
+    function daySearch(){
+        var s = document.getElementById("search").focus();
+        var x = document.getElementById("input")
+        var searchInput = x.value;
+        console.log("Here is what is returned from the date input : ");
+        console.log(searchInput);
+        var inputList = searchInput.split("-");
+        defaults.year = Number(inputList[0]);
+        console.log("The year after searching is : " + defaults.year);
+        var searchDay = new Date(defaults.year, (inputList[1] - 1), inputList[2]);
+        var searchDayOfTheYear = Math.ceil((searchDay - new Date(inputList[0], 0, 0)) / 86400000);
+        defaults.day = searchDayOfTheYear;
+        console.log("The defaults.day value after serching is : " + defaults.day);
+        
+        main(defaults.year); 
+        };
+
     document.getElementById('next').onclick = next;
     document.getElementById('previous').onclick = previous;
+    document.getElementById("search").onclick = daySearch;
+
     document.body.addEventListener("keyup", function(event) {
         if (event.code === "ArrowRight") {            
             event.preventDefault();
-            this.outerHTML = this.outerHTML;
+            this.outerHTML = this.outerHTML; //This is needed to "Reset"the body element to prevent every action from doubling every time its activated. 
             next();
         } 
         if (event.code === "ArrowLeft"){
             event.preventDefault();
-            this.outerHTML = this.outerHTML;
+            this.outerHTML = this.outerHTML; //This is needed to "Reset"the body element to prevent every action from doubling every time its activated. 
             previous();
+        }
+        if (event.code === "Enter" || event.code === "NumpadEnter"){
+            event.preventDefault();
+            daySearch();
         }
     });
 
-
-    document.getElementById("search").onclick = function () {
-        var x = document.getElementById("input")
-        var searchInput = x.value;
-        console.log("The searchInput is: " + searchInput)
-        var inputList = searchInput.split("-");
-        defaults.year = inputList[0];
-        
-        var searchDay = new Date(defaults.year, (inputList[1] - 1), inputList[2]);
-        var searchDayOfTheYear = Math.ceil((searchDay - new Date(inputList[0], 0, 0)) / 86400000);
-        defaults.day = searchDayOfTheYear;
-        
-        main(defaults.year);
-
-    };
   
+};// onload()
+    
 };// main()
 
-
-}
-
-// Initial call of the main() function
 main(defaults.year);

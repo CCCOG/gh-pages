@@ -436,11 +436,11 @@ Look at the birds of the air; they neither sow nor reap nor gather into barns, a
 
 Lord Jesus, in all we see and do, we recognize your life-giving touch. We thank you for feeding our hearts, our souls, and our minds. May we give ourselves entirely to you. Amen.
 
-Ash Wednesday
-
+
 Ash Wednesday
 
-Wednesday, February 10 — Psalm 22:9–21 Genesis 39; Matthew 13:47–58 
+Wednesday, February 10 — Psalm 22:9–21
+Genesis 39; Matthew 13:47–58 
 
 Ash Wednesday — Joel 2:1–2,12–17; Psalm 51:1–17
 2 Corinthians 5:20b–6:10; Matthew 6:1–6,16–21
@@ -963,7 +963,7 @@ We give praise to you, powerful God, for breaking the bonds of death and driving
 Easter Monday
 
 Monday, March 28 — Psalm 40:1–8
-Exodus 32:30–33:23 Matthew 26:47–58
+Exodus 32:30–33:23; Matthew 26:47–58
 
 Give us life, and we will call on your name. Psalm 80:18
 
@@ -1372,15 +1372,19 @@ Ascension Day
 
 Watchword for the Ascension — Christ says, “I, when I am lifted up from the earth, will draw all people to myself.” John 12:32
 
-Thursday, May 5 — Psalm 59:1–9 Leviticus 26:36–27:15; Mark 9:1–10 
+Thursday, May 5 — Psalm 59:1–9
+Leviticus 26:36–27:15; Mark 9:1–10 
 
-Ascension of the Lord — Acts 1:1–11; Psalm 47 Ephesians 1:15–23; Luke 24:44–53
+Ascension of the Lord — Acts 1:1–11; Psalm 47
+Ephesians 1:15–23; Luke 24:44–53
 
 God is our refuge and strength, a very present help in trouble. Therefore we will not fear. Psalm 46:1–2
 
 Jesus said, “All authority in heaven and on earth has been given to me.” Matthew 28:18
 
 With praise and thanksgiving in our hearts we thank you, God, for your saving grace and help. Your constant love continues to outpour on us each day. May we freely give to others as you give to us. Amen.
+
+
 Friday, May 6 — Psalm 59:10–17
 Leviticus 27:16–Numbers 1:16; Mark 9:11–29
 
@@ -1565,7 +1569,7 @@ Thank you, God, that we have access to you and your Son Jesus Christ by the one 
 
 
 Monday, May 23 — Psalm 68:19–27
-Numbers 12:1–13:16 Mark 13:14–27
+Numbers 12:1–13:16; Mark 13:14–27
 
 You shall rise up before the grayheaded and honor the aged. Leviticus 19:32 (NASB)
 
@@ -1666,6 +1670,7 @@ I gave them my statutes and showed them my ordinances, by whose observance every
 Jesus answered, “Those who love me will keep my word, and my Father will love them, and we will come to them and make our home with them.” John 14:23
 
 Lord, make your home in our hearts and guide us to live in your ways. Give us the strength to honor you through our words and actions, to praise you alone, and to shine your light in the world. Amen.
+
 
 Thursday, June 2 — Psalm 71:18b–24
 Numbers 21:10–22:6; Mark 15:21–32 
@@ -1770,6 +1775,7 @@ By the ordinances of the Lord is your servant warned. Psalm 19:11
 Pay attention to how you listen. Luke 8:18
 
 Forgive us, God, when we fail to walk with you; guide us back to you, and fill us with your love and grace that we might better serve you. Amen.
+
 
 Fourth Sunday after Pentecost
 
@@ -1833,6 +1839,7 @@ Let the prophet who has a dream tell the dream, but let the one who has my word 
 Beloved, do not believe every spirit, but test the spirits. 1 John 4:1
 
 Faithful Shepherd, lead us; through trial and injustice, lead us; through stress and business, lead us; through illness and loss, lead us. Carry us when we are weak and tired, find us when we are lost, heal us when we are sick; leave no one behind. Faithful Shepherd, lead your flock. Amen.
+
 
 Saturday, June 18 — Psalm 78:1–8
 Numbers 34; Luke 3:1–20 
@@ -1916,6 +1923,7 @@ The steadfast love of the Lord is from everlasting to everlasting on those who f
 Jesus Christ is the same yesterday and today and forever. Hebrews 13:8
 
 God, we pray for Christians, that we might hear your words and seek a deeper faith. Open our minds, hearts, and hands to love others so that we may share with them the good news of your grace. Amen.
+
 
 Sixth Sunday after Pentecost
 
@@ -1959,6 +1967,7 @@ When you have eaten and are satisfied, praise the Lord your God. Deuteronomy 8:1
 God has not left himself without a witness in doing good—giving you rains from heaven and fruitful seasons, and filling you with food and your hearts with joy. Acts 14:17
 
 Let us praise you with joyous hearts for our many blessings: for enough food to nourish our bodies; for love and fellowship; for our warm and comfortable homes; for the convenience technology brings to our lives; for health, strength, and energy; and for the beauty that we find in nature. Thank you. Amen.
+
 
 Thursday, June 30 — Psalm 80:8–11
 Deuteronomy 8:1–9:6; Luke 6:12–26 
@@ -2023,10 +2032,7 @@ I give thanks to my God always for you because of the grace of God that has been
 
 Lord Jesus, it pleases you for your people to be united as one. Grant us direction, Lord, so that we may remain united in love and service. Let your light shine in us, as we love and serve you and others. Amen.
 
-John Hus Festival
-
-John Hus Festival
-
+
 Wednesday, July 6 — Psalm 82:1–4
 Deuteronomy 14:22–15:18; Luke 7:31–38 
 
@@ -2070,6 +2076,7 @@ Ah Lord God! It is you who made the heavens and the earth by your great power an
 We rely not on ourselves but on God who raises the dead. He who rescued us from so deadly a peril will continue to rescue us; on him we have set our hope that he will rescue us again.  2 Corinthians 1:9–10
 
 Great Father of glory, nothing is too difficult for you. You render unto us the same strength and power that raised Jesus from the dead. It is you who equips and strengthens us to serve your kingdom. Amen.
+
 
 Eighth Sunday after Pentecost
 
@@ -2298,7 +2305,7 @@ Eleventh Sunday after Pentecost
 
 Watchword for the Week — Set your minds on things that are above, not on things that are on earth. Colossians 3:2
 
-Sunday, July 31 — Ecclesiastes 1:2,12–14;2:18–23; Psalm 49:1–12
+Sunday, July 31 — Ecclesiastes 1:2,12–14,2:18–23; Psalm 49:1–12
 Colossians 3:1–11; Luke 12:13–21
 
 You shall not revile the deaf or put a stumbling-block before the blind; you shall fear your God. Leviticus 19:14 
@@ -2426,16 +2433,16 @@ Loving Redeemer, you will never leave our side—we are never alone. You are our
 Friday, August 12 — Psalm 97:1–6
 Joshua 19:40–21:8; Luke 17:1–10 
 
-May the Lord our God incline our hearts to him, to walk in all his ways. 1 Kings 8:58 
+May the Lord our God incline our hearts to him, to walk in all his ways. 1 Kings 8:58<br/> <br/>Help me the slow of heart to move <br/>by some clear, winning word of love;<br/>teach me the wayward feet to stay,<br/>and guide them in the homeward way. (735)
 
-His divine power has given us everything needed for life and godliness. 2 Peter 1:3
+His divine power has given us everything needed for life and godliness. 2 Peter 1:3<br/> <br/>Not your merit brings God near,<br/>but God’s great compassion <br/>for the creature he fashioned. <br/>He will prove his faithfulness to you <br/>and in holy ways he will lead you. <br/>So to God give praise which is his due. (275*)
 
 Kind Shepherd, you lead us to life-giving water, to paths of righteousness, and to everlasting life. Strengthen us so that we may bring others into the fold. Amen.
 
-August Thirteenth Festival
+* 	© 1994 by Brian Henkelmann
 
-August Thirteenth Festival
 
+
 Saturday, August 13 — Psalm 97:7–12
 Joshua 21:9–45; Luke 17:11–19 
 
@@ -2448,6 +2455,10 @@ If we confess our sins, he who is faithful and just will forgive us our sins and
 
 God of fire and flame, ignite in us a renewed spirit. Give us loud voices to sing your praise. Cleanse our hearts so that we may love deeply and forgive, as you have forgiven us. Amen.
 
+†	At the conclusion of a Holy Communion service in the church at Berthelsdorf, Germany, on August 13, 1727, the residents of Herrnhut were united into the Renewed Brethren’s Church through the Spirit of God.
+
+
+
 Thirteenth Sunday after Pentecost
 
 Watchword for the Week — Let us run with perseverance the race that is set before us, looking to Jesus the pioneer and perfecter of our faith. Hebrews 12:1–2
@@ -3201,7 +3212,7 @@ Twenty-Third Sunday after Pentecost
 
 Watchword for the Week — Jesus says, “All who exalt themselves will be humbled, but all who humble themselves will be exalted.” Luke 18:14
 
-Sunday, October 23 — Jeremiah 14:7–10;19–22; Psalm 84:1–7
+Sunday, October 23 — Jeremiah 14:7–10,19–22; Psalm 84:1–7
 2 Timothy 4:6–8,16–18; Luke 18:9–14
 
 O that you would tear open the heavens and come down! Isaiah 64:1
@@ -3342,6 +3353,7 @@ You who seek God, let your hearts revive. Psalm 69:32
 Let us run with perseverance the race that is set before us, looking to Jesus the pioneer and perfecter of our faith. Hebrews 12:1–2 
 
 Most holy God, keep us vigilant in seeking you. Give us the strength and faith to trust wholly in you and to keep our eyes fixed upon you as we run the race that is perfect in your will. All glory is yours, O Father. In Jesus’ name we pray. Amen.  
+
 
 Saturday, November 5 — Psalm 119:161–168
 1 Kings 2:1–38; John 12:12–19 
@@ -3593,6 +3605,7 @@ My word shall not return to me empty, but it shall accomplish that which I purpo
 The disciples went out and proclaimed the good news everywhere, while the Lord worked with them and confirmed the message by the signs that accompanied it. Mark 16:20
 
 Lord, as we go forth today may we spread your word in all that we say and do. May the power of your message not fall upon deaf ears; may we all know that you are God. Amen. 
+
 
 Monday, November 28 — Psalm 136
 1 Kings 20:1–21; John 19:12–24 

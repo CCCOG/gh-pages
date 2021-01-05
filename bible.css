@@ -8,7 +8,24 @@ body {
     height: 5vh;
     width: 15vw;
   }
-  
+
+  button#previous {
+    font-size: 3vw;
+  }
+
+  button#next {
+    font-size: 3vw;
+  }
+
+  input#input {
+    font-size: 3vw;
+  }
+
+  button#search {
+    font-size: 3vw;
+  }
+
+
   input {
     height: 4.6vh;
   }

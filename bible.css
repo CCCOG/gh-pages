@@ -5,8 +5,9 @@ body {
   }
   
   button {
-    height: 5vh;
-    width: 15vw;
+    height: auto;
+    width: auto;
+    padding: 1em;
   }
 
   button#previous {

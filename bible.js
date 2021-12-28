@@ -1,4 +1,4 @@
-const finalYear = 2021 // Update this value after every new year is added !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const finalYear = 2022 // Update this value after every new year is added !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const leapYears = [2016, 2020, 2024, 2028, 2032];
 
 
@@ -21,8 +21,8 @@ var defaults = {
 // This is the request function. This will pull in the data from github with a file name that
 // matches final<year>.json
 function getJsonFile(textYear){
-    var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/" + textYear + ".json"
-    // var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_v3/major-change-for-index/" + textYear + ".json"
+    // var requestURL = "https://raw.githubusercontent.com/CCCOG/gh-pages/master/" + textYear + ".json"
+    var requestURL = "https://raw.githubusercontent.com/thecodinghyrax/Bible_page_update_v3/major-change-for-index/" + textYear + ".json"
     var request = new XMLHttpRequest();
     request.open('GET', requestURL)
     request.responseType = 'json';
@@ -205,7 +205,7 @@ request.onload = function() {
     };
 
     //Hides the next button if current day is the last day in the last JSON file
-    if ((defaults.year === year && leapYears.includes(year) && defaults.day >= 366) || (defaults.year === year && defaults.day >= 365)){
+    if ((defaults.year === finalYear && leapYears.includes(year) && defaults.day >= 366) || (defaults.year === finalYear && defaults.day >= 365)){
         document.getElementById("next").style.visibility = "hidden";
     } else {
         document.getElementById("next").style.visibility = "visible";
@@ -214,16 +214,18 @@ request.onload = function() {
     // Defines the function to advance to the next day entry 
     function next() {
         // What to do if its the last day of a non-leap year and not the current year
-        if (defaults.day === 365 && defaults.year != year && !leapYears.includes(defaults.year)){
+        if (defaults.day === 365 && defaults.year != finalYear && !leapYears.includes(defaults.year)){
             defaults.year += 1;
             defaults.day = 1
             // What to do if it's on the last day of a leap year and not the current year
-        } else if (defaults.day === 366 && defaults.year != year){
+        } else if (defaults.day === 366 && defaults.year != finalYear){
             defaults.year += 1;
             defaults.day = 1;
             // What to do if it's the last day of the current year
-        } else if ( defaults.year === year && (defaults.day === 365 && !leapYears.includes(defaults.year)) || (defaults.day === 366 && leapYears.includes(defaults.year)) ) {
+        } else if ( defaults.year === finalYear && (defaults.day === 365 && !leapYears.includes(defaults.year)) || (defaults.day === 366 && leapYears.includes(defaults.year)) ) {
             console.log("End of the year. Do nothing when the Next button is clicked!");
+            console.log("defaults.year: " + defaults.year)
+            console.log("finalYear: " + yefinalYearar)
         } else {
             defaults.day += 1;
         }

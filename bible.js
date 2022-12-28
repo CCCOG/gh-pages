@@ -225,7 +225,7 @@ request.onload = function() {
         } else if ( defaults.year === finalYear && (defaults.day === 365 && !leapYears.includes(defaults.year)) || (defaults.day === 366 && leapYears.includes(defaults.year)) ) {
             console.log("End of the year. Do nothing when the Next button is clicked!");
             console.log("defaults.year: " + defaults.year)
-            console.log("finalYear: " + yefinalYearar)
+            console.log("finalYear: " + finalYear)
         } else {
             defaults.day += 1;
         }

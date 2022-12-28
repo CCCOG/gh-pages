@@ -302,7 +302,7 @@ class SourceData:
                     for count, item in enumerate(day_verse_line):
                         try:
                             if type(item) == str:
-                                day_verse_line[count] = item.strip().replace('\u2013', '-')
+                                day_verse_line[count] = item.strip().replace('\u2013', '-').replace('\u2014', '-')
                             if item == "":
                                 day_verse_line.pop(count)
                         except:

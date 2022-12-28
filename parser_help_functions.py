@@ -302,7 +302,7 @@ class SourceData:
                     for count, item in enumerate(day_verse_line):
                         try:
                             if type(item) == str:
-                                day_verse_line[count] = item.strip()
+                                day_verse_line[count] = item.strip().replace('\u2013', '-')
                             if item == "":
                                 day_verse_line.pop(count)
                         except:
@@ -403,4 +403,3 @@ class SourceData:
                     self.new_year_dict[count + 1].append(day_verse_line)
                 while len(day) > 0:
                     self.remove_lines_from_year_list(count, 0)
-

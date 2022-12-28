@@ -330,12 +330,19 @@ class SourceData:
         watchword(day), doctrinal, and prayer. 
         '''
         for count, day in enumerate(self.year_data_lines):
-
-            self.new_year_dict[count + 1].append([day[-3][0], "watchD", day[-3][1]])
-            self.new_year_dict[count + 1].append([day[-2][0], "docT", day[-2][1]])
-            self.new_year_dict[count + 1].append([day[-1][0], "prayer", day[-1][1]])
-            for _ in range(3):
-                self.remove_lines_from_year_list(count, -1)
+            try:
+                self.new_year_dict[count + 1].append([day[-3][0], "watchD", day[-3][1]])
+                self.new_year_dict[count + 1].append([day[-2][0], "docT", day[-2][1]])
+                self.new_year_dict[count + 1].append([day[-1][0], "prayer", day[-1][1]])
+                for _ in range(3):
+                    self.remove_lines_from_year_list(count, -1)
+            except Exception as e:
+                print(e)
+                print("Trying to add: ", day)
+                print('append([day[-3][0], "watchD", day[-3][1]])')
+                print('.append([day[-2][0], "docT", day[-2][1]])')
+                print('.append([day[-1][0], "prayer", day[-1][1]])')
+                print()
 
 
     def find_watchword_lines(self):

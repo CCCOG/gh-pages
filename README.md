@@ -1,6 +1,6 @@
 # Daily Bible Verse Project
 
-This is a small project written for the [CENTRALIA COMMUNITY CHURCH](https://cccog.com). We receive a yearly text file that contains information, bible verses and prayers for each day of the year. Our goal was to turn that into a webpage that could be imbedded into the churches Squarespace site.
+This is a small project written for the [CENTRALIA COMMUNITY CHURCH](https://cccog.com). We receive a yearly text file that contains information, bible verses and prayers for each day of the year. Our goal was to turn that into a webpage that could be embedded into the churches Squarespace site.
 
 ## Background
 

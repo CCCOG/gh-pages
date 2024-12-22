@@ -25,7 +25,7 @@ while retry:
     print("Press 5 to select a slice range of days from the year_data_lines")
     print("Press 6 to see all day line entries that don't end with prayer")
     print("============ Processing date info ============")
-    print("Press 7 to appempt to process all (entire year at once)")
+    print("Press 7 to attempt to process all (entire year at once)")
     # print("Press 8 to process all day + verse lines")
     # print("Press 9 to process ending info lines (warning run option 7 first!!!)")
     # print("Press 10 to process the last three lines (warning run option 8 first!!!)")
